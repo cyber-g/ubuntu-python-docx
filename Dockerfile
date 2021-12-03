@@ -2,6 +2,12 @@ FROM ubuntu
 
 RUN apt-get update
 
+# Install libreoffice to convert docx to pdf
+ARG DEBIAN_FRONTEND="noninteractive"
+ENV TZ=Europe/Paris
+RUN apt-get install -y --no-install-recommends \
+    libreoffice
+
 RUN apt-get install -y \
     python3 python3-pip python3-pandas
 
@@ -15,8 +21,3 @@ RUN apt-get install -y --no-install-recommends \
     ttf-mscorefonts-installer
 RUN fc-cache -f -v
 
-# Install libreoffice to convert docx to pdf
-ARG DEBIAN_FRONTEND="noninteractive"
-ENV TZ=Europe/Paris
-RUN apt-get install -y --no-install-recommends \
-    libreoffice
