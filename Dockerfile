@@ -21,3 +21,5 @@ RUN apt-get install -y --no-install-recommends \
     ttf-mscorefonts-installer
 RUN fc-cache -f -v
 
+RUN apt-get install -y \
+    pdftk
