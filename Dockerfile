@@ -23,3 +23,6 @@ RUN fc-cache -f -v
 
 RUN apt-get install -y \
     pdftk
+
+RUN apt-get install -y \
+    qpdf
